@@ -1,4 +1,4 @@
-const MASTER_PIN = "1234";
+const MASTER_PIN = "Tim78711";
 
 const loginScreen = document.getElementById("login-screen");
 const vaultScreen = document.getElementById("vault-screen");
