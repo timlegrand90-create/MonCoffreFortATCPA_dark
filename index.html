@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mon Coffre Fort ATCPA Dark</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app-container">
+
+    <header class="app-header">
+        <h1>Mon Coffre Fort ATCPA</h1>
+        <p class="subtitle">Prototype – Ne pas utiliser pour des mots de passe réels</p>
+    </header>
+
+    <!-- Écran de connexion -->
+    <section id="login-screen" class="card">
+        <h2>Connexion</h2>
+        <p class="info-text">
+            Entrez votre code PIN pour ouvrir le coffre-fort.
+        </p>
+        <form id="login-form">
+            <label for="pin">Code PIN</label>
+            <input type="password" id="pin" maxlength="10" required placeholder="Votre PIN">
+            <button type="submit">Ouvrir le coffre</button>
+        </form>
+        <p class="hint">
+            PIN par défaut : <strong>1234</strong> (à modifier dans app.js).
+        </p>
+        <p id="login-error" class="error hidden"></p>
+    </section>
+
+    <!-- Coffre -->
+    <section id="vault-screen" class="card hidden">
+        <div class="vault-header">
+            <div>
+                <h2>Coffre fort</h2>
+                <p class="info-text">Gérez vos entrées.</p>
+            </div>
+            <button id="logout-btn" class="secondary">Fermer</button>
+        </div>
+
+        <form id="item-form" class="item-form">
+            <div class="form-row">
+                <div class="field">
+                    <label for="label">Libellé</label>
+                    <input type="text" id="label" required placeholder="Ex. Banque">
+                </div>
+                <div class="field">
+                    <label for="login">Identifiant</label>
+                    <input type="text" id="login" placeholder="ex. mail@mail.com">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="field">
+                    <label for="password">Mot de passe</label>
+                    <input type="text" id="password" placeholder="Mot de passe">
+                </div>
+                <div class="field">
+                    <label for="notes">Notes</label>
+                    <input type="text" id="notes" placeholder="Notes">
+                </div>
+            </div>
+            <button type="submit">Ajouter</button>
+        </form>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                <tr>
+                    <th>Libellé</th>
+                    <th>Identifiant</th>
+                    <th>Mot de passe</th>
+                    <th>Notes</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody id="items-table-body"></tbody>
+            </table>
+        </div>
+    </section>
+
+    <footer class="app-footer">
+        <small>Prototype local – Pas de chiffrement</small>
+    </footer>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
